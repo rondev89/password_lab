@@ -1,0 +1,14 @@
+cd ~/password_lab
+# Crack MD5 hashes
+john --wordlist=small_wordlist.txt --format=raw-md5 md5_hashes.txt
+
+# Crack SHA256 hashes
+john --wordlist=small_wordlist.txt --format=raw-sha256 sha256_hashes.txt
+
+# Crack salted SHA512 hashes
+john --wordlist=small_wordlist.txt --format=sha512crypt sha512crypt_hashes.txt
+
+# Show results
+john --show --format=Raw-MD5 md5_hashes.txt
+john --show --format=Raw-SHA256 sha256_hashes.txt
+john --show --format=sha512crypt sha512crypt_hashes.txt
